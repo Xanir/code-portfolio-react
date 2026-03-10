@@ -3,7 +3,7 @@ function Hero() {
     <section id="hero" className="hero">
       <div className="hero-content">
         <p className="hero-greeting">Hi, I&apos;m</p>
-        <h1 className="hero-name">Enzey</h1>
+        <h1 className="hero-name">Enzey (Jo)</h1>
         <h2 className="hero-title">Senior Full-Stack Engineer</h2>
         <p className="hero-tagline">
           15+ years building modern, scalable web applications — from pixel-perfect UIs to robust backend systems.
