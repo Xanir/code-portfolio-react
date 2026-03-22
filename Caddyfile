@@ -1,0 +1,19 @@
+:80 {
+    root * /srv
+    encode gzip
+
+    # Match anything starting with /api/chat
+    handle /api/chat* {
+        # Strip the "/api" prefix, leaving just "/chat..."
+        uri strip_prefix /api
+        
+        # Proxy the modified request to your backend
+        reverse_proxy {$AI_CHAT_URL}
+    }
+
+    # 2. Handle everything else as static files
+    handle {
+        try_files {path} {path}/ /index.html
+        file_server
+    }
+}
