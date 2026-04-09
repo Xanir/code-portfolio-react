@@ -70,7 +70,7 @@ const experiences = [
 
 function Experience() {
   return (
-    <section id="experience" className="section experience">
+    <section id="experience" className="section experience lighten-background">
       <div className="container">
         <h2 className="section-title">Professional Experience</h2>
         <div className="timeline">

@@ -63,7 +63,7 @@ function Chat() {
   };
 
   return (
-    <section id="chat" className="section chat">
+    <section id="chat" className="section chat lighten-background">
       <div className="container">
         <h2 className="section-title">Ask About {name}</h2>
         <p className="chat-description">

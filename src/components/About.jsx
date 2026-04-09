@@ -1,6 +1,6 @@
 function About() {
   return (
-    <section id="about" className="section about">
+    <section id="about" className="section about lighten-background">
       <div className="container">
         <h2 className="section-title">About Me</h2>
         <div className="about-content">

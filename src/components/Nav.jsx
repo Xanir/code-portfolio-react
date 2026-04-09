@@ -6,6 +6,7 @@ function Nav() {
     { href: '#skills', label: 'Skills' },
     { href: '#experience', label: 'Experience' },
     { href: '#education', label: 'Education' },
+    { href: '#github', label: 'GitHub' },
     { href: '#chat', label: 'Ask AI' },
   ];
 
