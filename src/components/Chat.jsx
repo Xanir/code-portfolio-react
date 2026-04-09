@@ -69,6 +69,9 @@ function Chat() {
         <p className="chat-description">
           Have a question about my background, experience, or skills? Ask the AI assistant below.
         </p>
+        <p className="chat-disclaimer">
+          ⚠️ This AI runs locally on a consumer GPU (RTX 2060 Super) — responses may take a few seconds.
+        </p>
         <div className="chat-window">
           <div className="chat-messages">
             {messages.length === 0 && (

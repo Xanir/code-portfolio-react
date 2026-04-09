@@ -5,3 +5,5 @@ COPY ./dist /srv
 
 # Copy the custom Caddy config file into the image
 COPY ./Caddyfile /etc/caddy/Caddyfile
+
+EXPOSE 80
