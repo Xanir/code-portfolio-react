@@ -1,0 +1,83 @@
+.case-study-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  padding-top: 100px; /* account for fixed nav */
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--color-interactive);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.case-study-content {
+  background-color: var(--color-bg-alt);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.case-study-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.5rem;
+}
+
+.case-study-content h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+}
+
+.case-study-content h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.case-study-content p {
+  margin-bottom: 1rem;
+}
+
+.case-study-content ul, .case-study-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.case-study-content li {
+  margin-bottom: 0.5rem;
+}
+
+.case-study-content pre {
+  background-color: var(--color-bg);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.case-study-content code {
+  font-family: monospace;
+  background-color: var(--color-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.case-study-content hr {
+  border: 0;
+  border-top: 1px solid var(--color-shadow);
+  margin: 2rem 0;
+}

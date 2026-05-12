@@ -1,5 +1,17 @@
 const projects = [
   {
+    name: 'WebComponent-Flyout',
+    description: 'A Web Component flyout/popover with precise positioning control.',
+    url: 'https://github.com/Xanir/WebComponent-Flyout',
+    topics: ['Web Components', 'TypeScript', 'JavaScript'],
+  },
+  {
+    name: 'esp32-elgato-light-control',
+    description: 'An ESP32-based project for controlling Elgato LED lights over a local network.',
+    url: 'https://github.com/Xanir/esp32-elgato-light-control',
+    topics: ['ESP32', 'C++', 'IoT'],
+  },
+  {
     name: 'code-portfolio-react',
     description: 'This portfolio website — a single-page app built with React and Vite, featuring an AI-powered chat assistant, smooth section navigation, and a fully responsive design.',
     url: 'https://github.com/Xanir/code-portfolio-react',
@@ -10,7 +22,7 @@ const projects = [
     description: 'The Node.js/Express back-end that powers the AI chat feature on this portfolio. Connects to an LLM API with a custom system prompt to answer questions about my experience and skills.',
     url: 'https://github.com/Xanir/code-portfolio-ai-chatbot',
     topics: ['Node.js', 'Express', 'AI'],
-  },
+  }
 ];
 
 function GitHub() {

@@ -1,0 +1,74 @@
+.case-studies {
+  background-color: var(--color-bg);
+}
+
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .case-studies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.case-study-card {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.2s ease;
+  height: 100%;
+}
+
+.case-study-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-accent);
+}
+
+.case-study-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.case-study-overview {
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.case-study-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.read-more-btn {
+  display: inline-block;
+  align-self: flex-start;
+  color: var(--color-bg);
+  background-color: var(--color-interactive);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.read-more-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  text-decoration: none;
+}
