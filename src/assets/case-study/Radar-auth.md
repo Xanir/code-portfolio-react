@@ -25,7 +25,44 @@ The system utilized a **Dual-Hash Strategy** in Redis to manage session lifecycl
 ### The "Pop-up Handshake" Flow
 To avoid a top-level page redirect, I implemented a non-intrusive authentication sequence managed via Axios interceptors. When a `401 Unauthorized` response is detected, the application initiates a "Glass Shield" state to lock the UI before opening a small pop-up window pointed at a subdomain behind the IAM wall. Because the user is on a managed workstation, IAM authenticates the pop-up automatically, generating a short-lived **One-Time Token (OTT)**. The pop-up then passes this OTT back to the main window and closes, allowing the main app to exchange it for a persistent session and replay the original failed requests.
 
+```mermaid
+sequenceDiagram
 
+participant U as User/Browser (radar.com)
+participant A as API Server
+participant S as Session Microservice (Redis)
+participant P as Pop-up (auth.radar.com)
+participant I as Corporate IAM
+
+Note over U, A: User attempts to access a shared deep-link
+U->>A: GET /api/search-results
+A-->>U: 401 Unauthorized
+
+Note right of U: Axios Interceptor catches 401
+U->>U: Dim UI & Lock Inputs (Glass Shield)
+U->>P: window.open(auth.radar.com)
+
+P->>I: Request Authentication
+I-->>P: 200 OK (IAM Session ID via Header)
+
+P->>S: POST /register (IAM Session ID)
+S->>S: Store in Redis "Pending" (30s TTL)
+S-->>P: 201 Created (One-Time Token / OTT)
+
+P->>U: window.opener.postMessage(OTT)
+Note over P: Pop-up Closes Automatically
+
+U->>S: POST /exchange (OTT)
+S->>S: Move IAM ID to "Active" Table (15m TTL)
+S-->>U: 200 OK (App Session ID)
+
+Note over U: Interceptor sets Auth Header
+U->>A: Replay GET /api/search-results
+A->>S: GET /resolve (App Session ID)
+S-->>A: 200 OK (Valid IAM Session ID)
+A-->>U: 200 OK (Search Data)
+U->>U: Tear down Glass Shield & Resume
+```
 ---
 
 ## Proactive Session Maintenance

@@ -6,6 +6,7 @@ import "./CaseStudy.css"; // We'll create this to match the main styling
 // Import markdown files (we can also use dynamic imports)
 import radarAuth from "../assets/case-study/Radar-auth.md?raw";
 import radarUrlState from "../assets/case-study/Radar-url-state.md?raw";
+import Mermaid from "./Mermaid";
 
 const caseStudies = {
   "Radar-auth": radarAuth,
@@ -42,7 +43,24 @@ export default function CaseStudy() {
         &larr; Back to Portfolio
       </button>
       <div className="case-study-content">
-        <ReactMarkdown>{content}</ReactMarkdown>
+        <ReactMarkdown
+          components={{
+            code({ node, inline, className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || '');
+              const language = match ? match[1] : '';
+              if (!inline && language === 'mermaid') {
+                return <Mermaid chart={String(children).replace(/\n$/, '')} />;
+              }
+              return (
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              );
+            },
+          }}
+        >
+          {content}
+        </ReactMarkdown>
       </div>
     </div>
   );
