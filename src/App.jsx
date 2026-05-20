@@ -36,7 +36,6 @@ function LandingPage() {
       <Experience />
       <GitHub />
       <Education />
-      <Chat />
     </>
   )
 }
