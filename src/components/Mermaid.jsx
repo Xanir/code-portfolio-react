@@ -89,7 +89,7 @@ export default function Mermaid({ chart }) {
       </button>
       <div
         ref={containerRef}
-        style={{ width: '100%', height: '400px', backgroundColor: '#1c1f26' }}
+        style={{ width: '100%', height: '580px', backgroundColor: '#1c1f26' }}
         dangerouslySetInnerHTML={{ __html: svgContent }}
       />
     </div>
